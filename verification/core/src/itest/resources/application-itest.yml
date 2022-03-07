@@ -1,0 +1,51 @@
+logging:
+  config: classpath:logback-spring.xml
+
+verification:
+  code-length: 10
+  ttl: 10m
+
+spring:
+  redis:
+    host: localhost
+    port: 6370
+    password:
+    timeout:
+  liquibase:
+    url: jdbc:h2:~/verification-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    user: sa
+    password:
+    change-log: classpath:db/master.xml
+    contexts: master
+    drop-first: true
+  datasource:
+    url: jdbc:h2:~/verification-test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+
+kafka:
+  bootstrapAddresses: localhost:9092
+  groupId: verification
+  topics:
+    verification-create-reply:
+      name: verification-create-reply
+    verification-create-request:
+      name: verification-create-request
+      replyTopicName: verification-create-reply
+    verification-confirm-reply:
+      name: verification-confirmation-reply
+    verification-confirm-request:
+      name: verification-confirmation-request
+      replyTopicName: verification-confirmation-reply
+    verification-created:
+      name: verification-created
+    verification-confirmed:
+      name: verification-confirmed
+    verification-confirmation-failed:
+      name: verification-confirmation-failed

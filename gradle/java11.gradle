@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'java-library'
+apply plugin: 'org.unbroken-dome.test-sets'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+targetCompatibility = '11'
+sourceCompatibility = '11'
+
+task dist {
+    dependsOn 'build'
+}
+
+testSets {
+    itest
+}
+
+idea {
+    module.iml.withXml {
+        def atts = it.asNode().component.content.sourceFolder
+                .find { it.@url == 'file://$MODULE_DIR$/src/itest/resources' }
+                .attributes()
+        atts.remove('isTestSource')
+        atts.put('type', 'java-test-resource')
+    }
+}

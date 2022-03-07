@@ -1,0 +1,120 @@
+apply plugin: "io.spring.dependency-management"
+
+ext {
+    versions = [
+            spring            : [
+                    boot : "2.6.4",
+                    cloud: "3.1.1",
+                    retry: "1.3.2",
+                    kafka: "2.8.3"
+            ],
+            mockito           : "4.3.1",
+            lombok            : "1.18.22",
+            jackson           : "2.13.1",
+            junit             : "4.13.2",
+            restAssured       : "4.5.1",
+            sl4j              : "1.7.36",
+            logback           : "1.2.10",
+            hibernateValidator: "6.2.2.Final",
+            postgres          : "42.3.3",
+            jmustache         : "1.15",
+            embeddedKafka     : "1.16.3",
+            embeddedRedis     : "0.7.3",
+            h2                : "2.1.210",
+            liquibase         : "4.8.0",
+            springTestDbunit  : "1.3.0",
+            dbunit            : "2.7.3"
+
+    ]
+
+    libs = [
+            springBootWeb  : "org.springframework.boot:spring-boot-starter-web",
+            unitTest       : [
+                    "org.springframework.boot:spring-boot-starter-test",
+                    "org.mockito:mockito-core",
+                    "junit:junit"
+            ],
+            integrationTest: [
+                    "io.rest-assured:rest-assured",
+                    "org.springframework.boot:spring-boot-starter-test",
+                    "org.springframework.kafka:spring-kafka-test",
+                    "org.testcontainers:kafka",
+                    "org.springframework.cloud:spring-cloud-contract-wiremock"
+            ],
+            lombok         : "org.projectlombok:lombok",
+            validation     : [
+                    "org.springframework.boot:spring-boot-starter-validation",
+                    "org.hibernate.validator:hibernate-validator"
+            ],
+            jackson        : [
+                    "com.fasterxml.jackson.core:jackson-databind",
+                    "com.fasterxml.jackson.core:jackson-core",
+                    "com.fasterxml.jackson.core:jackson-annotations"
+            ],
+            logging        : [
+                    "org.slf4j:slf4j-api",
+                    "ch.qos.logback:logback-classic",
+            ],
+            redis          : "org.springframework.boot:spring-boot-starter-data-redis",
+            persistance    : [
+                    "org.springframework.boot:spring-boot-starter-data-jpa",
+                    "org.postgresql:postgresql",
+                    "org.liquibase:liquibase-core"
+            ],
+            webClient      : "org.springframework.cloud:spring-cloud-starter-openfeign",
+            email          : "org.springframework.boot:spring-boot-starter-mail",
+            retry          : "org.springframework.retry:spring-retry:1.3.2",
+            templates      : "com.samskivert:jmustache",
+            messageBroker  : "org.springframework.kafka:spring-kafka",
+            embeddedRedis  : "it.ozimov:embedded-redis",
+            dbTesting      : [
+                    "com.h2database:h2",
+                    "org.liquibase:liquibase-core",
+                    "com.github.springtestdbunit:spring-test-dbunit",
+                    "org.dbunit:dbunit"
+            ]
+    ]
+}
+
+dependencyManagement {
+    dependencies {
+        dependency "org.springframework.boot:spring-boot:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-web:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-test:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-validation:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-data-redis:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-data-jpa:$versions.spring.boot"
+        dependency "org.springframework.boot:spring-boot-starter-mail:$versions.spring.boot"
+
+        dependency "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.spring.cloud"
+        dependency "org.springframework.cloud:spring-cloud-contract-wiremock:$versions.spring.cloud"
+
+        dependency "org.springframework.retry:spring-retry:$versions.spring.retry"
+        dependency "org.springframework.kafka:spring-kafka:$versions.spring.kafka"
+        dependency "org.springframework.kafka:spring-kafka-test:$versions.spring.kafka"
+
+        dependency "org.testcontainers:kafka:$versions.embeddedKafka"
+        dependency "it.ozimov:embedded-redis:$versions.embeddedRedis"
+        dependency "com.h2database:h2:$versions.h2"
+        dependency "org.liquibase:liquibase-core:$versions.liquibase"
+        dependency "com.samskivert:jmustache:$versions.jmustache"
+
+        dependency "org.postgresql:postgresql:$versions.postgres"
+        dependency "com.github.springtestdbunit:spring-test-dbunit:$versions.springTestDbunit"
+        dependency "org.dbunit:dbunit:$versions.dbunit"
+
+        dependency "org.mockito:mockito-core:$versions.mockito"
+        dependency "org.projectlombok:lombok:$versions.lombok"
+        dependency "org.hibernate.validator:hibernate-validator:$versions.hibernateValidator"
+
+        dependency "com.fasterxml.jackson.core:jackson-databind:$versions.jackson"
+        dependency "com.fasterxml.jackson.core:jackson-core:$versions.jackson"
+        dependency "com.fasterxml.jackson.core:jackson-annotations:$versions.jackson"
+
+        dependency "junit:junit:$versions.junit"
+        dependency "io.rest-assured:rest-assured:$versions.restAssured"
+        dependency "org.slf4j:slf4j-api:$versions.sl4j"
+        dependency "ch.qos.logback:logback-classic:$versions.logback"
+
+    }
+}

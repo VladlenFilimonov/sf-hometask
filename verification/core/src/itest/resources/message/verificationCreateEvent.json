@@ -1,0 +1,10 @@
+{
+  "userInfo": {
+    "ipAddress": "127.0.0.1",
+    "userAgent": "test-agent"
+  },
+  "subject": {
+    "identity": "john.doe@abc.xyz",
+    "type": "EMAIL_CONFIRMATION"
+  }
+}

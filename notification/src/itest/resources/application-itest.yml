@@ -1,0 +1,38 @@
+logging:
+  config: classpath:logback-spring.xml
+
+spring:
+  liquibase:
+    url: jdbc:h2:~/notification-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    user: sa
+    password:
+    change-log: classpath:db/master.xml
+    contexts: master
+    drop-first: true
+  datasource:
+    url: jdbc:h2:~/notification-test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  mail:
+    host: localhost
+    port: 587
+    username: usr
+    password: pwd
+
+template:
+  baseUrl: http://localhost:8085/
+
+kafka:
+  bootstrapAddresses: localhost:9092
+  groupId: notification
+  topics:
+    verification-created:
+      name: verification-created
+    notification-created:
+      name: notification-created
+    notification-dispatched:
+      name: notification-dispatched

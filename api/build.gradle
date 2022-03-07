@@ -1,0 +1,11 @@
+apply from: "${rootDir}/gradle/dependencies.gradle"
+apply from: "${rootDir}/gradle/java11.gradle"
+
+dependencies {
+    annotationProcessor libs.lombok
+
+    compileOnly libs.lombok
+
+    implementation libs.validation
+    implementation libs.jackson
+}

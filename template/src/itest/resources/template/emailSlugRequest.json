@@ -1,0 +1,6 @@
+{
+  "slug": "email-verification",
+  "variables": {
+    "code": "1234"
+  }
+}

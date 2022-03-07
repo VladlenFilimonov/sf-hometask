@@ -1,0 +1,31 @@
+apply from: "${rootDir}/gradle/dependencies.gradle"
+apply from: "${rootDir}/gradle/java11.gradle"
+
+dependencies {
+    annotationProcessor libs.lombok
+
+    compileOnly libs.lombok
+
+    implementation project(":api")
+    implementation project(":event")
+    implementation libs.springBootWeb
+    implementation libs.messageBroker
+    implementation libs.webClient
+    implementation libs.logging
+    implementation libs.persistance
+    implementation libs.email
+    implementation libs.retry
+
+    itestImplementation project(":api")
+    itestImplementation project(":event")
+    itestImplementation libs.unitTest
+    itestImplementation libs.integrationTest
+    itestImplementation libs.messageBroker
+    itestImplementation libs.dbTesting
+    itestImplementation libs.springBootWeb
+    itestImplementation libs.email
+    itestImplementation libs.retry
+    itestAnnotationProcessor libs.lombok
+    itestCompileOnly libs.lombok
+
+}

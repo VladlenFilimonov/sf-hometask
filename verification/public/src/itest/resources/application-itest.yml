@@ -1,0 +1,14 @@
+kafka:
+  bootstrapAddresses: localhost:9092
+  groupId: verification
+  topics:
+    verification-create-reply:
+      name: verification-create-reply
+    verification-create-request:
+      name: verification-create-request
+      replyTopicName: verification-create-reply
+    verification-confirm-reply:
+      name: verification-confirmation-reply
+    verification-confirm-request:
+      name: verification-confirmation-request
+      replyTopicName: verification-confirmation-reply

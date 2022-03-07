@@ -1,0 +1,12 @@
+<dataset>
+    <verification
+            client_ip="127.0.0.1"
+            client_agent="test-agent"
+            subject_type="EMAIL_CONFIRMATION"
+            subject_identity="john.doe@abc.xyz"
+            confirmed="false"
+            attempts="0"
+            code="1234567890"
+            verification_id="8633e6f8-3b48-4130-af61-28a39bd58b34"
+    />
+</dataset>

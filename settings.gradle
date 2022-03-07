@@ -1,0 +1,9 @@
+rootProject.name = 'sunfinance-hometask'
+
+include 'template'
+include 'verification:public'
+include 'verification:core'
+include 'notification'
+include 'api'
+include 'event'
+

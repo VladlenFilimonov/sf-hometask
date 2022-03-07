@@ -1,0 +1,5 @@
+{
+  "subject": {
+    "identity": "john.doe@abc.xyz",
+    "type": "email_confirmation"
+  }
