@@ -4,7 +4,7 @@ import com.sunfinance.hometask.api.SubjectType;
 import com.sunfinance.hometask.verification.core.aggregate.Subject;
 import com.sunfinance.hometask.verification.core.aggregate.UserInfo;
 import com.sunfinance.hometask.verification.core.aggregate.Verification;
-import com.sunfinance.hometask.verification.core.persistance.VerificationEntity;
+import com.sunfinance.hometask.verification.core.persistence.VerificationEntity;
 import org.junit.Test;
 
 import java.math.BigInteger;

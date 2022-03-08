@@ -9,7 +9,7 @@ import com.sunfinance.hometask.api.event.verification.VerificationConfirmedEvent
 import com.sunfinance.hometask.event.EventService;
 import com.sunfinance.hometask.verification.core.aggregate.Verification;
 import com.sunfinance.hometask.verification.core.aggregate.VerificationFactory;
-import com.sunfinance.hometask.verification.core.persistance.VerificationRepository;
+import com.sunfinance.hometask.verification.core.persistence.VerificationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;

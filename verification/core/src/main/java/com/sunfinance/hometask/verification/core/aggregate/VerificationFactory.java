@@ -2,7 +2,7 @@ package com.sunfinance.hometask.verification.core.aggregate;
 
 import com.sunfinance.hometask.api.SubjectType;
 import com.sunfinance.hometask.api.event.verification.VerificationCreateEvent;
-import com.sunfinance.hometask.verification.core.persistance.VerificationEntity;
+import com.sunfinance.hometask.verification.core.persistence.VerificationEntity;
 import com.sunfinance.hometask.verification.core.service.generator.CodeGenerator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

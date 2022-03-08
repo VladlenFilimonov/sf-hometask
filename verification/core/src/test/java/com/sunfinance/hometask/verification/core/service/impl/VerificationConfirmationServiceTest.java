@@ -9,8 +9,8 @@ import com.sunfinance.hometask.api.event.verification.VerificationConfirmedEvent
 import com.sunfinance.hometask.event.EventService;
 import com.sunfinance.hometask.verification.core.aggregate.Verification;
 import com.sunfinance.hometask.verification.core.aggregate.VerificationFactory;
-import com.sunfinance.hometask.verification.core.persistance.VerificationEntity;
-import com.sunfinance.hometask.verification.core.persistance.VerificationRepository;
+import com.sunfinance.hometask.verification.core.persistence.VerificationEntity;
+import com.sunfinance.hometask.verification.core.persistence.VerificationRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

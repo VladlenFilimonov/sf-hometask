@@ -1,4 +1,4 @@
-package com.sunfinance.hometask.verification.core.persistance;
+package com.sunfinance.hometask.verification.core.persistence;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -3,8 +3,8 @@ package com.sunfinance.hometask.verification.core.rules;
 import com.sunfinance.hometask.api.error.NoPermissionsException;
 import com.sunfinance.hometask.api.error.VerificationNotFoundException;
 import com.sunfinance.hometask.api.event.verification.VerificationConfirmationEvent;
-import com.sunfinance.hometask.verification.core.persistance.VerificationEntity;
-import com.sunfinance.hometask.verification.core.persistance.VerificationRepository;
+import com.sunfinance.hometask.verification.core.persistence.VerificationEntity;
+import com.sunfinance.hometask.verification.core.persistence.VerificationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
